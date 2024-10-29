@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',  // Move 'output' here
   images: {
     domains: [
       'i.pinimg.com', 
@@ -8,8 +9,7 @@ const nextConfig = {
       'cdn.mycreativeshop.com',
       'imgur.com',      // Add imgur.com here
       'i.imgur.com'     // Add i.imgur.com here
-    ],
-    output: 'export'
+    ]
   },
 };
 
