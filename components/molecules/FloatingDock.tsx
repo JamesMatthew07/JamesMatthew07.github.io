@@ -10,13 +10,19 @@ export default function FloatingDockk() {
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(false);
+      
+      // Clear the previous timeout
       clearTimeout(scrollTimeout);
+      
+      // Set a new timeout to show the dock after scrolling stops
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       scrollTimeout = setTimeout(() => {
         setIsVisible(true);
-      }, 150);
+      }, 150); // Adjust this value to change how long after scrolling stops before showing the dock
     };
 
     window.addEventListener('scroll', handleScroll);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(scrollTimeout);
@@ -24,22 +30,46 @@ export default function FloatingDockk() {
   }, []);
 
   const links = [
-    { title: "Home", icon: <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
-    { title: "Projects", icon: <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
-    { title: "LinkedIn", icon: <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
-    { title: "Facebook", icon: <IconBrandFacebook className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
-    { title: "GitHub", icon: <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />, href: "#" },
+    {
+      title: "Home",
+      icon: (
+        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Projects",
+      icon: (
+        <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "LinkedIn",
+      icon: (
+        <IconBrandLinkedin className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "Facebook",
+      icon: (
+        <IconBrandFacebook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
+    {
+      title: "GitHub",
+      icon: (
+        <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "#",
+    },
   ];
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 flex justify-center transition-opacity duration-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-      <div className="overflow-hidden max-w-full">
-        <FloatingDock
-          items={links}
-          desktopClassName="max-w-screen-md mx-auto" // Adjust as necessary for desktop layout
-          mobileClassName="max-w-full" // Adjust as necessary for mobile layout
-        />
-      </div>
+    <div className={`transition-opacity duration-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <FloatingDock items={links} />
     </div>
   );
 }
