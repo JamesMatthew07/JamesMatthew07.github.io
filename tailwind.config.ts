@@ -111,14 +111,15 @@ const config: Config = {
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: PluginAPI) {
-  const allColors = flattenColorPalette(theme("colors"));
-  const newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars: Record<string, string> = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val as string])
   );
 
   addBase({
     ":root": newVars,
   });
 }
+
 
 export default config;
