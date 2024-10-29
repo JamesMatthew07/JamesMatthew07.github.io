@@ -11,7 +11,6 @@ export default function FloatingDockk() {
     const handleScroll = () => {
       setIsVisible(false);
       clearTimeout(scrollTimeout);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
       scrollTimeout = setTimeout(() => {
         setIsVisible(true);
       }, 150);
@@ -35,7 +34,11 @@ export default function FloatingDockk() {
   return (
     <div className={`fixed bottom-0 left-0 right-0 flex justify-center transition-opacity duration-200 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <div className="overflow-hidden max-w-full">
-        <FloatingDock items={links} className="max-w-screen-sm mx-auto" />
+        <FloatingDock
+          items={links}
+          desktopClassName="max-w-screen-md mx-auto" // Adjust as necessary for desktop layout
+          mobileClassName="max-w-full" // Adjust as necessary for mobile layout
+        />
       </div>
     </div>
   );
