@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
 const defaultTheme = require("tailwindcss/defaultTheme");
 const svgToDataUri = require("mini-svg-data-uri");
 const colors = require("tailwindcss/colors");
@@ -84,7 +85,7 @@ const config: Config = {
   plugins: [
     require("tailwindcss-animate"),
     addVariablesForColors,
-    function ({ matchUtilities, theme }) {
+    function ({ matchUtilities, theme }: PluginAPI) {  // Typed PluginAPI
       matchUtilities(
         {
           "bg-grid": (value) => ({
@@ -109,9 +110,9 @@ const config: Config = {
   ],
 } satisfies Config;
 
-function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
+function addVariablesForColors({ addBase, theme }: PluginAPI) {
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
 
