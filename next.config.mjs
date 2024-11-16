@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',  // Move 'output' here
   images: {
     domains: [
       'i.pinimg.com', 
