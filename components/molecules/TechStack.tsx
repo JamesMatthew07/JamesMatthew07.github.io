@@ -7,13 +7,13 @@ export default function TechStack() {
       <div className="bg-black h-auto pb-20 pt-40">
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-12 col-md-6">
               <Image
                 src="https://i.imgur.com/BX4yFIk.png"
                 alt="Picture"
                 width={400}
                 height={400}
-                className="img-fluid mt-4 ml-10"
+                className="img-fluid mt-4"
               />
             </div>
             <div className="col-md-6">
