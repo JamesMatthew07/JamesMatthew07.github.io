@@ -1,7 +1,6 @@
 "use client"
 
 import { cn } from "@/lib/utils";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
 import createGlobe from "cobe";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -27,10 +26,10 @@ export default function FeaturesSectionDemo() {
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
-      title: "Coming Soon",
+      title: "Movie Portal",
       description:
-        "Hold your horses, Thiss will take a while",
-      // skeleton: <SkeletonThree />,
+        "Let us help you find the movies that you are so eager to watch.",
+      skeleton: <SkeletonThree />,
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
@@ -132,24 +131,25 @@ export const SkeletonOne = () => {
 
 export const SkeletonThree = () => {
   return (
-    <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
-      target="__blank"
-      className="relative flex gap-10  h-full group/image"
-    >
-      <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
+    <Link href="https://jamesmatthew07.github.io/Movie-Portal/">
+    <div className="relative flex py-4 px-2 gap-10 h-auto cursor-pointer">
+      <div className="w-auto p-4 mx-auto shadow-2xl group h-full">
+        <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
-          <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
           <Image
-            src="https://assets.aceternity.com/fireship.jpg"
-            alt="header"
-            width={800}
-            height={800}
-            className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
+            src="https://i.imgur.com/UJBWNLu.png"
+            alt="Movie Portal"
+            width={1000}
+            height={1000}
+            quality={100}
+            className="object-contain rounded-sm"
           />
         </div>
       </div>
+
+      <div className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-black dark:from-black via-grey dark:via-black to-transparent w-full pointer-events-none" />
+      <div className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-black dark:from-black via-transparent to-transparent w-full pointer-events-none" />
+    </div>
     </Link>
   );
 };

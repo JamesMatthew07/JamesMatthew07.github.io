@@ -8,7 +8,8 @@ const nextConfig = {
       'image.freepik.com', 
       'cdn.mycreativeshop.com',
       'imgur.com',      // Add imgur.com here
-      'i.imgur.com'     // Add i.imgur.com here
+      'i.imgur.com',     // Add i.imgur.com here
+      'assets.aceternity.com'
     ]
   },
 };
