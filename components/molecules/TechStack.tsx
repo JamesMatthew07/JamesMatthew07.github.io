@@ -1,23 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Image from "next/image";
 
 export default function TechStack() {
   return (
     <>
-      <div className="bg-black h-auto pb-20 pt-40">
+      <div className="bg-black h-auto pb-20">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-6">
-              <Image
-                src="https://i.imgur.com/BX4yFIk.png"
-                alt="Picture"
-                width={400}
-                height={400}
-                className="img-fluid mt-4"
-              />
-            </div>
-            <div className="col-md-6">
-              <div className="text-4xl text-white text-center pt-4 pb-2">
+            <div className="col-md-12">
+              <div className="text-4xl text-white text-center pb-10 font-semibold">
                 Technology Utilized
               </div>
               <div className="row text-center mt-4">
