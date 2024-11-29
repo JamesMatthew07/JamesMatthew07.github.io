@@ -39,8 +39,8 @@ function AboutMe() {
                   </p>
                 </HeroHighlight>
                 <div className="text-white text-xl mt-3">
-                The philosophies I live by:
-                <FlipWords className="text-white" words={["kaizen", "stoicism","memento mori", "amor fati"]} duration={2000}></FlipWords>
+                philosophies I live by:
+                <FlipWords className="text-white" words={["kaizen", "stoicism", "amor fati","memento mori"]} duration={2000}></FlipWords>
                 </div>
               </div>
             </div>

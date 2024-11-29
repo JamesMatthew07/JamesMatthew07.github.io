@@ -6,7 +6,7 @@ import HoverEffect from "../ui/card-hover-effect";
 function Videos() {
   return (
     <>
-    <div className="conainer mt-20">
+    <div className="container mt-20">
         <div className="row">
             <div className="col-12">
                 <div className="h-auto">

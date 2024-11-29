@@ -6,6 +6,7 @@ import MapEmbed from "@/components/molecules/Map";
 import TechStack from "@/components/molecules/TechStack";
 import Videos from "@/components/molecules/Videos";
 
+
 export default function Page() {
   return (
     <>
@@ -14,7 +15,9 @@ export default function Page() {
       <AboutMe/>
       <TechStack/>
       <div className="bg-black">
-      <FeaturesSection/>
+        <div id="projects">
+        <FeaturesSection/>
+        </div>
       <Videos>
       </Videos>
       <MapEmbed></MapEmbed>
